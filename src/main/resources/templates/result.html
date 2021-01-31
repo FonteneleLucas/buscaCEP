@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" href="style.css" />
+
+<script type="text/javascript" src="jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="jquery.maskedinput-1.1.4.pack.js" /></script>
+
+<script type="text/javascript">
+	$(document).ready(function($){
+		$("#cep").mask("99.999-999");
+		
+	});
+</script>
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+<title>Busca Endereço por CEP - API</title>
+
+</head>
+<body>
+
+
+	<!-- Container containing all contents -->
+	<div class="container pt-5">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-9 col-lg-7 col-xl-6">
+				<!-- White Container -->
+				<div class="container rounded mt-2 mb-2 px-0">
+
+					<div class="card text-center" style="background-color: #0D232D">
+						<div class="card-header">
+							<h3 class="pt-3 text-white"
+								style="font-family: Courier; font-size: 20px">Endereço encontrado!</h3>
+						</div>
+
+						<div class="card-body text-left" >
+							<ul class="list-group">
+
+								<li class="list-group-item" th:text="'CEP: ' + ${cep.cep}"></li>
+								<li class="list-group-item"
+									th:text="'Logradouro: ' + ${cep.logradouro}"></li>
+								<li class="list-group-item"
+									th:text="'Complemento: ' + ${cep.complemento}"></li>
+								<li class="list-group-item" th:text="'Bairro: ' + ${cep.bairro}"></li>
+								<li class="list-group-item"
+									th:text="'Localidade: ' + ${cep.localidade}"></li>
+								<li class="list-group-item" th:text="'UF: ' + ${cep.uf}"></li>
+								<li class="list-group-item" th:text="'DDD: ' + ${cep.ddd}"></li>
+							</ul>
+
+						</div>
+						<div class="card-footer text-muted text-center">
+							<a class="buttonSend btn btn-outline-secondary" href="/" role="button" style="border-left: 2px solid">Nova consulta</a>
+						</div>
+
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
+
